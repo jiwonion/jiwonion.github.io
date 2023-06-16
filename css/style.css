@@ -78,7 +78,8 @@ button:focus {
 
 /* Header */
 .header {
-  background-color: black;
+  /* background-color: var(--color-primary); */
+  background-color: transparent;
   position: fixed;
   top: 0;
   width: 100%;
@@ -87,6 +88,7 @@ button:focus {
   justify-content: space-between; /*flex*/
   align-items: center; /*flex*/
   z-index: 1;
+  transition: background-color 200ms ease-in;
 }
 
 .header__logo {
@@ -124,7 +126,8 @@ button:focus {
 
 /* Home */
 #home {
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  background-color: blueviolet;
   color: var(--color-text);
   padding: 5rem 1rem;
   padding-top: 7rem;
