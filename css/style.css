@@ -386,3 +386,22 @@ button:focus {
   background-color: var(--color-accent);
   margin: 0.5rem 0;
 }
+
+/* Testimonial */
+.testimonials {
+  margin: 3rem;
+}
+
+.testimonial {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
