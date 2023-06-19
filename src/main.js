@@ -27,3 +27,26 @@ document.addEventListener('scroll', () => {
     arrow.style.opacity = 0;
   }
 });
+
+//bar 클릭시 메뉴 구현
+const menuButton = document.querySelector('.header__button');
+const menu = document.querySelector('.header__menu');
+menuButton.addEventListener('click', () => {
+  const menuDisplay = menu.style.display;
+  if (menuDisplay == 'flex') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'flex';
+  }
+});
+
+const menuItems = document.querySelectorAll('.header__menu__item');
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener('click', () => {
+    menuItems.forEach((element) => {
+      element.classList.remove('active');
+    });
+    menuItem.classList.add('active');
+    menu.style.display = 'none';
+  });
+});
