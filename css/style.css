@@ -530,10 +530,6 @@ button:focus {
     width: 100%;
   }
 
-  .header__button {
-    display: inline;
-  }
-
   #home {
     padding-bottom: 3rem;
   }

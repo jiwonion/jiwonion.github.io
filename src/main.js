@@ -31,22 +31,37 @@ document.addEventListener('scroll', () => {
 //bar 클릭시 메뉴 구현
 const menuButton = document.querySelector('.header__button');
 const menu = document.querySelector('.header__menu');
+const menuItems = document.querySelectorAll('.header__menu__item');
+
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener('click', () => {
+    console.log(menuButton.style.display);
+    menuItems.forEach((element) => {
+      element.classList.remove('active');
+    });
+    menuItem.classList.add('active');
+    if (menuButton.style.display === 'inline') {
+      menu.style.display = 'none';
+    }
+  });
+});
+
 menuButton.addEventListener('click', () => {
-  const menuDisplay = menu.style.display;
-  if (menuDisplay == 'flex') {
+  if (menu.style.display === 'flex') {
     menu.style.display = 'none';
   } else {
     menu.style.display = 'flex';
   }
 });
 
-const menuItems = document.querySelectorAll('.header__menu__item');
-menuItems.forEach((menuItem) => {
-  menuItem.addEventListener('click', () => {
-    menuItems.forEach((element) => {
-      element.classList.remove('active');
-    });
-    menuItem.classList.add('active');
-    menu.style.display = 'none';
-  });
-});
+const menuEvent = () => {
+  if (window.innerWidth < 768) {
+    menuButton.style.display = 'inline';
+  } else {
+    //menuButton.style.display = 'none';
+  }
+};
+
+menuEvent();
+
+window.addEventListener('resize', menuEvent);
