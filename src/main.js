@@ -28,40 +28,14 @@ document.addEventListener('scroll', () => {
   }
 });
 
-//bar 클릭시 메뉴 구현
-const menuButton = document.querySelector('.header__button');
-const menu = document.querySelector('.header__menu');
-const menuItems = document.querySelectorAll('.header__menu__item');
-
-menuItems.forEach((menuItem) => {
-  menuItem.addEventListener('click', () => {
-    console.log(menuButton.style.display);
-    menuItems.forEach((element) => {
-      element.classList.remove('active');
-    });
-    menuItem.classList.add('active');
-    if (menuButton.style.display === 'inline') {
-      menu.style.display = 'none';
-    }
-  });
+//Navbar 토글버튼 클릭 처리
+const navbarMenu = document.querySelector('.header__menu');
+const navbarToggle = document.querySelector('.header__toggle');
+navbarToggle.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
 });
 
-menuButton.addEventListener('click', () => {
-  if (menu.style.display === 'flex') {
-    menu.style.display = 'none';
-  } else {
-    menu.style.display = 'flex';
-  }
+//Navbar 메뉴 클릭시 메뉴를 자동으로 닫아줌
+navbarMenu.addEventListener('click', () => {
+  navbarMenu.classList.remove('open');
 });
-
-const menuEvent = () => {
-  if (window.innerWidth < 768) {
-    menuButton.style.display = 'inline';
-  } else {
-    //menuButton.style.display = 'none';
-  }
-};
-
-menuEvent();
-
-window.addEventListener('resize', menuEvent);
