@@ -32,3 +32,33 @@ function filterProjects(filter) {
     projectsContainer.classList.remove('anim-out');
   }, 250);
 }
+
+const navBarItems = document.querySelectorAll('.header__menu__item');
+let options = {
+  rootMargin: '0px',
+  threshold: 0.5,
+};
+
+let observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      navBarItems.forEach((item) => {
+        if (entry.target.id === item.dataset.type) {
+          navActiveSelection(item);
+        }
+      });
+    }
+  });
+}, options);
+
+function navActiveSelection(selection) {
+  const active = document.querySelector('.header__menu__item.active');
+  active.classList.remove('active');
+  selection.classList.add('active');
+}
+
+const sections = document.querySelectorAll('.section');
+sections.forEach((section) => {
+  observer.observe(section);
+});
