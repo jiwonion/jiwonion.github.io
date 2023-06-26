@@ -18,6 +18,59 @@
   --size-max-width: 1200px;
 }
 
+.custom-shape-divider-bottom-1687772661 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1687772661 svg {
+  position: relative;
+  display: block;
+  width: calc(104% + 1.3px);
+  height: 31px;
+}
+
+.custom-shape-divider-bottom-1687772661 .shape-fill {
+  fill: var(--color-primary);
+}
+
+.custom-shape-divider-bottom-1687771951 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background-color: var(--color-primary);
+}
+
+.custom-shape-divider-bottom-1687771951 svg {
+  position: relative;
+  display: block;
+  width: calc(104% + 1.3px);
+  height: 63px;
+}
+
+.custom-shape-divider-bottom-1687771951 .shape-fill {
+  fill: var(--color-primary-variant);
+}
+
+.custom-shape-divider-top-1687772103 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translate(-35px, 0px);
+}
+
+.custom-shape-divider-top-1687772103 svg {
+  position: relative;
+  display: block;
+  width: calc(104% + 1.3px);
+  height: 63px;
+}
+
+.custom-shape-divider-top-1687772103 .shape-fill {
+  fill: var(--color-text);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -469,6 +522,8 @@ button:focus {
 #contact {
   background-color: var(--color-primary);
   color: var(--color-text);
+  padding: 0px;
+  padding-bottom: 4rem;
 }
 
 .contact__links {
