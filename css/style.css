@@ -164,11 +164,11 @@ button:focus {
   position: relative;
   background-color: var(--color-primary);
   color: var(--color-text);
-  padding: 5rem 1rem;
-  padding-top: 7rem;
+  padding: 7rem 1rem;
+  padding-top: 10rem;
   text-align: center;
-  /* background: var(--home-bg-gradient); */
   background-image: var(--home-bg-svg);
+  overflow: hidden;
 }
 
 #home::after {
@@ -176,7 +176,7 @@ button:focus {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: calc(100% + 1.3px);
+  width: 100%;
   height: 81px;
   overflow: hidden;
   line-height: 0;
@@ -186,9 +186,16 @@ button:focus {
   -webkit-mask: var(--divider-single-wave);
 }
 
+.home__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
 .home__avatar {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   object-fit: cover; /*이미지의 본래 비율 유지*/
   border-radius: 100%;
   border: 3px solid var(--color-accent);
@@ -361,6 +368,7 @@ button:focus {
 #work {
   background-color: var(--color-primary);
   color: var(--color-text);
+  padding-bottom: 7rem;
 }
 
 .categories {
@@ -372,13 +380,13 @@ button:focus {
 
 .category {
   position: relative;
-  color: var(--color-text);
   font-size: 1.1rem;
   padding: 0.5rem 3rem;
   border-radius: 4px;
   border: 1px solid var(--color-accent);
   cursor: pointer;
   white-space: nowrap;
+  color: var(--color-white);
 }
 
 .category--selected {
@@ -397,7 +405,7 @@ button:focus {
   line-height: 26px;
   border-radius: 100%;
   background-color: var(--color-accent-variant);
-  color: var(--color-text);
+  color: var(--color-primary);
   transition: all 200ms ease-in;
 }
 
@@ -423,12 +431,12 @@ button:focus {
 
 .project {
   position: relative;
-  border-radius: 8px;
   overflow: hidden;
 }
 
 .project__img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .project__metadata {
@@ -464,40 +472,6 @@ button:focus {
   margin: 0.5rem 0;
 }
 
-/* Testimonial */
-.testimonials {
-  margin: 3rem;
-}
-
-.testimonial {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.testimonial:nth-child(even) .testimonial__img {
-  order: 1;
-}
-.testimonial__img {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
-
-.testimonial__bubble {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.testimonial__bubble__name {
-  color: var(--color-accent);
-  font-weight: bold;
-  filter: brightness(70%);
-}
-
 /* Arrow up */
 .arrow-up {
   background-color: var(--color-primary);
@@ -512,14 +486,14 @@ button:focus {
   align-items: center;
   box-shadow: 2px 2px 0px 0px var(--color-accent);
   opacity: 0;
+  z-index: 1;
   transition: opacity 250ms ease-in;
 }
 
 /* Footer */
 #contact {
   position: relative;
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background-color: var(--color-white);
 }
 
 #contact::after {
@@ -527,11 +501,11 @@ button:focus {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% + 1.3px);
+  width: 100%;
   height: 66px;
   overflow: hidden;
   line-height: 0;
-  background-color: var(--color-white);
+  background-color: var(--color-primary);
   mask: var(--divider-arrow);
   -webkit-mask: var(--divider-arrow);
 }
@@ -568,7 +542,6 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: start;
-    background-color: var(--color-primary);
   }
 
   .header__logo__title {
@@ -597,6 +570,15 @@ button:focus {
 
   #home {
     padding-bottom: 3rem;
+  }
+
+  .home__container {
+    flex-direction: column;
+  }
+
+  .home__avatar {
+    width: 250px;
+    height: 250px;
   }
 
   .home__title {
@@ -631,14 +613,6 @@ button:focus {
 
   .projects {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .testimonial {
-    flex-direction: column;
-  }
-
-  .testimonial:nth-child(even) .testimonial__img {
-    order: 0;
   }
 
   .arrow-up {
