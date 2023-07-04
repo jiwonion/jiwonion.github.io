@@ -1,9 +1,15 @@
 'use strict';
 
 new TypeIt('.home__title--strong', {
-  speed: 150,
+  loop: true,
+  speed: 80,
+  deleteSpeed: 100,
 }) //space
-  .pause(500)
+  .pause(1500)
   .delete(12)
   .type('positive')
+  .pause(1500)
+  .delete(8)
+  .type('creative')
+  .pause(1500)
   .go();
