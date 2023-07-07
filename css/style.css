@@ -527,6 +527,12 @@ button:focus {
   color: var(--color-accent);
 }
 
+@media screen and (max-width: 950) {
+  .projects p {
+    font-size: 0.5rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .section {
     padding: 4rem 2rem;
@@ -616,11 +622,6 @@ button:focus {
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .projects p {
-    font-size: 0.5rem;
-  }
-
   .arrow-up {
     bottom: 1.5rem;
     right: 1.5rem;
